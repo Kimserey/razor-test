@@ -12,5 +12,11 @@ namespace RazorTest.Web2
         {
             return View();
         }
+
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            return View();
+        }
     }
 }
