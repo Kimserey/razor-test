@@ -1,1 +1,17 @@
 ﻿<p>Hello world</p>
+<p>@DateTime.Now</p>
+
+@{ 
+    var n = 10;
+}
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Super index";
+}
+
+@for (int i = 0; i < n; i++)
+{
+    @:Hey ho @i
+}
+
+<p>@(n + n)</p>
