@@ -1,6 +1,11 @@
 ﻿@{
-    Layout = "_Layout";
     ViewData["Title"] = "Test page";
 }
 
-<p>Some test page</p>
+@model Test
+
+<form>
+    <label asp-for="Hello">Hello?</label>
+    <input asp-for="Hello" type="text" />
+    <span asp-validation-for="Hello">Hello?</span>
+</form>
