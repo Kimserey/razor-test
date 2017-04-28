@@ -1,0 +1,8 @@
+{
+  "name": "razortest",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "font-awesome": "Font-Awesome#v4.7.0"
+  }
+}

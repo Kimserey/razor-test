@@ -1,21 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Super index";
-}
-
-<p>Hello world</p>
-<p>@DateTime.Now</p>
-
-@{ 
     var n = 10;
 }
 
-@for (int i = 0; i < n; i++)
-{
-    @:Hey ho @i
-}
+<div class="row">
+    <div class="col-md-6">
+        <div class="mt-5 card-outline-info">
+            <p>Hello world</p>
+            <p>@DateTime.Now</p>
 
-<p>@(n + n)</p>
+            <p>
+                @for (int i = 0; i < n; i++)
+            {
+                    @:Hey ho @i
+            }
+            </p>
 
-@section scripts {
-    <div>some scripts</div>
-}
+            <p>@(n + n)</p>
+
+            @section scripts {
+                <div>some scripts</div>
+            }
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p>Hehe</p>
+    </div>
+</div>

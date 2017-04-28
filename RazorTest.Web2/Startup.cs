@@ -26,6 +26,8 @@ namespace RazorTest.Web2
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseMvcWithDefaultRoute();
         }
     }
