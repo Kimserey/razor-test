@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Test page";
+}
+
+@model IEnumerable<Company>
+
+<h1>Show companies</h1>
+
+@foreach (var comp in @Model) { 
+    @Html.Partial("CompanyCard", comp)
+}
