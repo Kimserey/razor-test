@@ -19,7 +19,7 @@ namespace AttributeRouteTest.Controllers
     [Route("t2")]
     public class T2Controller : Controller
     {
-        // GET /t1
+        // GET /t2
         [HttpGet]
         public IEnumerable<string> Get()
         {
