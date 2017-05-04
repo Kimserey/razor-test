@@ -59,7 +59,7 @@ namespace AttributeRouteTest.Controllers
         }
     }
 
-    [Route("/t6")] // Prepending with / in the controller route is not usefull.
+    [Route("/t6")] // Prepending with / in the controller route has no effect.
     public class T6Controller : Controller
     {
         // GET /t6/a
