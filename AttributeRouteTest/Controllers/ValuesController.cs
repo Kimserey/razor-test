@@ -6,39 +6,111 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AttributeRouteTest.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class T1Controller : Controller
     {
-        // GET api/values
+        // This will not be found
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+    }
 
-        // GET api/values/5
+    [Route("t2")]
+    public class T2Controller : Controller
+    {
+        // GET /t1
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    public class T3Controller : Controller
+    {
+        // GET /t3
+        [HttpGet("t3")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("t4")]
+    public class T4Controller : Controller
+    {
+        // GET /t4/a
+        [HttpGet("a")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("t5")]
+    public class T5Controller : Controller
+    {
+        // GET /a
+        [HttpGet("/a")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("/t6")] // Prepending with / in the controller route is not usefull.
+    public class T6Controller : Controller
+    {
+        // GET /t6/a
+        [HttpGet("a")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("[controller]")]
+    public class T7Controller : Controller
+    {
+        // GET /t7
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("[controller]/[action]")]
+    public class T8Controller : Controller
+    {
+        // GET /t8/Hello
+        [HttpGet]
+        public IEnumerable<string> Hello()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("[controller]")]
+    public class T9Controller : Controller
+    {
+        // GET /t9/Hello
+        [HttpGet("[action]")]
+        public IEnumerable<string> Hello()
+        {
+            return new string[] { "value1", "value2" };
+        }
+    }
+
+    [Route("[controller]")]
+    public class T10Controller : Controller
+    {
+        // GET /t10/{id}
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IEnumerable<string> Get(Guid id)
         {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return new string[] { "value1", "value2", id.ToString("n") };
         }
     }
 }

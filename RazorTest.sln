@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorTest.Web2", "RazorTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternMatching", "PatternMatching\PatternMatching.csproj", "{BF8CB6BB-91B2-4107-90E3-D63C6056567A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeRouteTest", "AttributeRouteTest\AttributeRouteTest.csproj", "{30810AE2-FBE4-4669-AA4E-5FA0236D755E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BF8CB6BB-91B2-4107-90E3-D63C6056567A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF8CB6BB-91B2-4107-90E3-D63C6056567A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF8CB6BB-91B2-4107-90E3-D63C6056567A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30810AE2-FBE4-4669-AA4E-5FA0236D755E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30810AE2-FBE4-4669-AA4E-5FA0236D755E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30810AE2-FBE4-4669-AA4E-5FA0236D755E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30810AE2-FBE4-4669-AA4E-5FA0236D755E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
