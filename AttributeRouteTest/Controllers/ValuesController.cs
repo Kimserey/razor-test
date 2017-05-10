@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace AttributeRouteTest.Controllers
 {
@@ -111,6 +112,57 @@ namespace AttributeRouteTest.Controllers
         public IEnumerable<string> Get(Guid id)
         {
             return new string[] { "value1", "value2", id.ToString("n") };
+        }
+    }
+
+    public class T11Controller : Controller
+    {
+        public class Body
+        {
+            [Required]
+            public Guid Value { get; set; }
+        }
+
+        // POST /t11
+        [HttpPost("/t11")]
+        public IActionResult Post([FromBody] Body value)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            return Ok(value.Value);
+        }
+    }
+
+    public class T12Controller : Controller
+    {
+        [ProducesResponseType(typeof(IEnumerable<string>), 200)]
+        [HttpGet("/t12/Get1")]
+        public IActionResult Get1()
+        {
+            return Ok(new List<string> { "value1", "value2" });
+        }
+
+        public class Value
+        {
+            public string Test { get; set; }
+        }
+
+        [ProducesResponseType(200, Type = typeof(Value[]))]
+        [HttpGet("/t12/Get2")]
+        public IActionResult Get2()
+        {
+            return Ok(new List<Value> { new Value { Test = "value1" }, new Value { Test = "value1" } });
+        }
+    }
+
+    public class T13Controller : Controller
+    {
+        [HttpPut]
+        [Route("/t13/Get1")]
+        public IActionResult Get1()
+        {
+            return Ok();
         }
     }
 }
