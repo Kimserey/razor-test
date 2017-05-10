@@ -159,8 +159,8 @@ namespace AttributeRouteTest.Controllers
     public class T13Controller : Controller
     {
         [HttpPut]
-        [Route("/t13/Get1")]
-        public IActionResult Get1()
+        [Route("/[controller]/[action]")]
+        public IActionResult GetValue()
         {
             return Ok();
         }
