@@ -165,4 +165,28 @@ namespace AttributeRouteTest.Controllers
             return Ok();
         }
     }
+
+    public class ChangeMemberName
+    {
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+    }
+
+    public class ChangeMemberNameDto
+    {
+        [FromRoute]
+        public string MemberId { get; set; }
+
+        [FromBody]
+        public ChangeMemberName Dto { get; set; }
+    }
+
+    public class T14Controller : Controller
+    {
+        [HttpPost("/{memberId}")]
+        public IActionResult ChangeMemberName(ChangeMemberNameDto dto)
+        {
+            return Json(dto);
+        }
+    }
 }
