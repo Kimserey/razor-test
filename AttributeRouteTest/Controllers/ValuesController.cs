@@ -166,14 +166,16 @@ namespace AttributeRouteTest.Controllers
         }
     }
 
-    public class ChangeMemberName
-    {
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-    }
+
 
     public class ChangeMemberNameDto
     {
+        public class ChangeMemberName
+        {
+            public string Firstname { get; set; }
+            public string Lastname { get; set; }
+        }
+
         [FromRoute]
         public string MemberId { get; set; }
 
