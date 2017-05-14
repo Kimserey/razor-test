@@ -15,6 +15,12 @@ namespace RazorTest.Web2
             return View();
         }
 
+        [HttpGet("/Home2")]
+        public IActionResult Index2()
+        {
+            return ViewComponent("CompanyList", new { count = 1 });
+        }
+
         [HttpGet("companies")]
         public IActionResult GetCompanies()
         {
