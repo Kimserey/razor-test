@@ -1,27 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace RazorTest.Web2
 {
-    public class Company
-    {
-        [Required]
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Description { get; set; }
-        public Domain Domain { get; set; }
-    }
-
-    public enum Domain
-    {
-        Finance,
-        Marketing
-    }
-
     [Route("[controller]")]
     public class HomeController: Controller
     {
