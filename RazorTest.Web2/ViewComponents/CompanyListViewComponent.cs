@@ -8,7 +8,7 @@ namespace RazorTest.Web2
 {
     public class CompanyListViewComponent : ViewComponent
     {
-        public Task<IViewComponentResult> InvokeAsync(int count)
+        public IViewComponentResult Invoke(int count)
         {
             var items = new List<Company> {
                  new Company {
@@ -27,7 +27,7 @@ namespace RazorTest.Web2
             .Take(count)
             .ToList();
 
-            return Task.FromResult((IViewComponentResult)View(items));
+            return View(items);
         }
     }
 }

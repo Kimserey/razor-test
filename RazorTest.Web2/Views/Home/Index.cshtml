@@ -1,13 +1,14 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "Super index";
     var n = 10;
 }
 
 <h1>View component test</h1>
 
-<company-list count="2"></company-list>
+<vc:company-list count="2"></vc:company-list>
 
-@await Component.InvokeAsync("CompanyList", new { count = 2 })
+@*@await Component.InvokeAsync("CompanyList", new { count = 2 })*@
 
 <br />
 
