@@ -8,9 +8,10 @@ using EFTest2;
 namespace EFTest2.Migrations
 {
     [DbContext(typeof(PersonDbContext))]
-    partial class PersonDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170520154522_AddedBirthday")]
+    partial class AddedBirthday
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
