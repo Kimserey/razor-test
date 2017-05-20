@@ -22,9 +22,13 @@ namespace EFTest.Controllers
         }
 
         [HttpGet("/Test/{id}")]
-        public IActionResult Test([FromRoute]int id, [FromBody]string name)
+        public IActionResult Test([FromRoute]int id)
         {
-            var company = new Company { Id = id, Name = name };
+            var company = new Company
+            {
+                Name = "Company A",
+                Address = "Some address"
+            };
             _dbContext.Add(company);
             _dbContext.SaveChanges();
             return Json(company);
